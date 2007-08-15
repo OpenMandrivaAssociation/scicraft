@@ -1,18 +1,16 @@
-
-Name:		scicraft
 Summary:	A powerful open source data analysis software
-Version:	0.18.0
-Release: 	%mkrel 2
-URL:		http://www.scicraft.org/
-Source0:	http://www.scicraft.org/files/%{name}_%{version}.tar.bz2
+Name:		scicraft
+Version:	1.0.2
+Release:	%mkrel 1
 License:	GPL
 Group:		Sciences/Other
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+URL:		http://www.scicraft.org/
+Source0:	http://www.scicraft.org/files/%{name}-ng_%{version}.tar.bz2
 BuildRequires:	python-devel
 BuildRequires:  tetex-dvipdfm
 BuildRequires:  latex2html
 BuildRequires:  perl
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 BuildRequires:  dos2unix
 
 Requires:	python
@@ -26,6 +24,7 @@ Requires:	R-base
 BuildArch:	noarch
 # for tests
 # BuildRequires:	python-qwt pymol python-rpy
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 SciCraft is a powerful open source data analysis software with an easy-to-use
@@ -68,17 +67,18 @@ always a need to perform data analysis.
 
 
 %prep
-%setup -q
+%setup -qn %{name}-ng-%{version}
 # %patch0
 #find -type f -exec dos2unix -U {} \;
 
 %build
-make examples.tgz html doc/manual/tex/scicraft.pdf
-
+#make examples.tgz html doc/manual/tex/scicraft.pdf
+%make default
 %install
 rm -rf %buildroot
 
-make install DESTDIR=%buildroot
+%makeinstall_std
+#make install DESTDIR=%buildroot
 
 # untar examples
 cd %buildroot/%{_datadir}/doc/%{name}
@@ -91,8 +91,7 @@ cd -
 #make test
 
 %clean
-/bin/rm -Rf %buildroot
-
+rm -rf %buildroot
 
 %files
 %defattr(0644, root, root, 0755)
@@ -107,6 +106,3 @@ cd -
 %defattr(0644, root, root, 0755)
 %{_datadir}/%{name}/datasets
 %{_datadir}/doc/%{name}/examples
-
-
-
