@@ -80,6 +80,7 @@ rm -rf %buildroot
 #make install DESTDIR=%buildroot
 
 # untar examples
+mkdir -p %buildroot/%{_datadir}/doc/%{name}
 cd %buildroot/%{_datadir}/doc/%{name}
 tar xzf examples.tgz
 rm -f examples.tgz
