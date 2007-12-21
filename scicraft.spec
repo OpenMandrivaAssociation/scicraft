@@ -17,7 +17,7 @@ Requires:	python
 Requires:       python-qwt
 Requires:       octave 
 Requires:       python-vtk
-Requires:       python-rpy
+Requires: python-rpy python-gtk python-gobject python-gtk-glade python-gnome python-gtk python-matplotlib python-scipy
 Requires:	PyQt
 Requires:	R-base
 
@@ -71,20 +71,12 @@ always a need to perform data analysis.
 #find -type f -exec dos2unix -U {} \;
 
 %build
-#make examples.tgz html doc/manual/tex/scicraft.pdf
-%make default
+
 %install
 rm -rf %buildroot
 
 %makeinstall_std
 #make install DESTDIR=%buildroot
-
-# untar examples
-mkdir -p %buildroot/%{_datadir}/doc/%{name}
-cd %buildroot/%{_datadir}/doc/%{name}
-tar xzf $OLDPWD/examples.tgz
-rm -f examples.tgz
-cd -
 
 %check
 # X display needed
