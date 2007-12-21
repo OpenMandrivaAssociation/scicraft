@@ -20,6 +20,7 @@ Requires:       python-vtk
 Requires: python-rpy python-gtk python-gobject python-gtk-glade python-gnome python-gtk python-matplotlib python-scipy
 Requires:	PyQt
 Requires:	R-base
+Obsoletes: scicraft-examples
 
 BuildArch:	noarch
 # for tests
@@ -40,30 +41,6 @@ analysis methods which originate from fields such as bioinformatics,
 statistics, chemometrics and artificial intelligence. One reason for this focus
 is that irrespective of the scientific field in question, there is almost
 always a need to perform data analysis.
-
-
-%package examples
-Summary:  Scicraft examples
-Group:	  Sciences/Other
-Requires: %{name} = %{version}
-
-%description examples
-SciCraft is a powerful open source data analysis software with an easy-to-use
-graphical user interface
-
-Many of todays scientists face the following problem: They need to integrate a
-substantial number of computational tools to solve problems.
-
-SciCraft is a software designed to make software and method integration easier.
-It is also designed to make different computational tools easily available to
-the user. In theory SciCraft can be used to integrate any type of software, but
-we have in particular focused on the integration and availability of data
-analysis methods which originate from fields such as bioinformatics,
-statistics, chemometrics and artificial intelligence. One reason for this focus
-is that irrespective of the scientific field in question, there is almost
-always a need to perform data analysis.
-
-
 
 %prep
 %setup -qn %{name}-ng-%{version}
@@ -89,12 +66,4 @@ rm -rf %buildroot
 %defattr(0644, root, root, 0755)
 %attr(0755, root, root) %{_bindir}/*
 %{_prefix}/lib/*
-%{_datadir}/%{name}
-%{_datadir}/doc/%{name}
-%exclude %{_datadir}/%{name}/datasets
-%exclude %{_datadir}/doc/%{name}/examples
-
-%files examples
-%defattr(0644, root, root, 0755)
-%{_datadir}/%{name}/datasets
-%{_datadir}/doc/%{name}/examples
+%{_datadir}/doc/%{name}-ng
