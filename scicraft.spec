@@ -25,6 +25,7 @@ Obsoletes: scicraft-examples
 BuildArch:	noarch
 # for tests
 # BuildRequires:	python-qwt pymol python-rpy
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 SciCraft is a powerful open source data analysis software with an easy-to-use
