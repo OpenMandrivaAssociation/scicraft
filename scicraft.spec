@@ -1,7 +1,7 @@
 Summary:	A powerful open source data analysis software
 Name:		scicraft
 Version:	1.0.2
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		Sciences/Other
 URL:		http://www.scicraft.org/
