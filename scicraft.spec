@@ -1,8 +1,8 @@
 Summary:	A powerful open source data analysis software
 Name:		scicraft
 Version:	1.0.2
-Release:	%mkrel 4
-License:	GPL
+Release:	%mkrel 5
+License:	GPLv2
 Group:		Sciences/Other
 URL:		http://www.scicraft.org/
 Source0:	http://www.scicraft.org/files/%{name}-ng_%{version}.tar.bz2
@@ -17,8 +17,7 @@ Requires:	python
 Requires:       python-qwt
 Requires:       octave 
 Requires:       python-vtk
-Requires: python-rpy python-gtk python-gobject python-gtk-glade python-gnome python-gtk python-matplotlib python-scipy
-Requires:	PyQt
+Requires: python-rpy pygtk2.0-libglade python-gobject gnome-python python-matplotlib python-scipy
 Requires:	R-base
 Obsoletes: scicraft-examples
 
