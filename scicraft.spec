@@ -45,7 +45,7 @@ always a need to perform data analysis.
 %prep
 %setup -qn %{name}-ng-%{version}
 # %patch0
-#find -type f -exec dos2unix -U {} \;
+#find -type f -exec dos2unix {} \;
 
 %build
 
