@@ -4,7 +4,7 @@ Version:	1.0.2
 Release:	7
 License:	GPLv2
 Group:		Sciences/Other
-URL:		http://www.scicraft.org/
+URL:		https://www.scicraft.org/
 Source0:	http://www.scicraft.org/files/%{name}-ng_%{version}.tar.bz2
 BuildRequires:	python-devel
 BuildRequires:  tetex-dvipdfm
